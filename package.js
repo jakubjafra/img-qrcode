@@ -1,10 +1,10 @@
 Package.describe({
-    name: 'khrone:img-qr-code',
-    version: '0.0.1',
+    name: 'khrone:img-qrcode',
+    version: '0.1.0',
 
     summary: "Provides template to generate QR code in <img> tag.",
 
-    git: 'https://github.com/khronedev/img-qr-code',
+    git: 'https://github.com/khronedev/img-qrcode',
 
     documentation: 'README.md'
 });
@@ -14,10 +14,13 @@ Package.onUse(function(api){
 
     api.use([
         'meteor-platform',
-        'steeve:jquery-qrcode'
+        'steeve:jquery-qrcode@0.2.2'
     ]);
 
     api.imply('templating');
 
-    api.addFiles(['client/QrId.html', 'client/QrId.js'], 'client');
+    api.addFiles([
+        'client/QrCode.html',
+        'client/QrCode.js'
+    ], 'client');
 });

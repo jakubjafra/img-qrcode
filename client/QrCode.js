@@ -4,7 +4,7 @@ function convertCanvasToImage(canvas) {
     return image;
 }
 
-Template.QrId.onRendered(function(){
+Template.QrCode.onRendered(function(){
     var instance = Template.instance();
 
     instance.$("div").qrcode({
@@ -17,10 +17,12 @@ Template.QrId.onRendered(function(){
     instance.$("div").append(convertCanvasToImage(canvas));
     instance.$("canvas").remove();
 
-    var width = instance.data.width || "256px";
-    var height = instance.data.height || "256px";
-    instance.$("img").css({
-        'width': width,
-        'height': height
-    }).addClass("qr-code");
+    instance.$("img").addClass("qr-code");
+
+    if(instance.data.size !== undefined) {
+        instance.$("img").css({
+            'width': instance.data.size,
+            'height': instance.data.size
+        });
+    }
 });
