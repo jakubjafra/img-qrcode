@@ -1,5 +1,5 @@
-img-qr-code
-===========
+khrone:img-qrcode
+=================
 
 Provides nice template for generating QR codes as ````<img>```` directly into HTML. It uses the [jquery-qrcode](https://larsjung.de/jquery-qrcode/) to encode messages.
 

@@ -1,6 +1,6 @@
 Package.describe({
     name: 'khrone:img-qrcode',
-    version: '0.1.0',
+    version: '0.1.1',
 
     summary: "Provides template to generate QR code in <img> tag.",
 
