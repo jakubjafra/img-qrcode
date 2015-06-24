@@ -1,7 +1,7 @@
 img-qr-code
 ===========
 
-Provides nice template for generating QR codes as ````<img>```` directly into HTML.
+Provides nice template for generating QR codes as ````<img>```` directly into HTML. It uses the [jquery-qrcode](https://larsjung.de/jquery-qrcode/) to encode messages.
 
 Usage
 -----
@@ -17,5 +17,7 @@ is generating code:
 ````
 The img is 256x256 px size.
 
-Optional parameters are:
-* ````size```` - size of image
+Parameters
+----------
+* ````text```` - text to be encoded
+* ````size```` - (optional) size of image (for example ````128px`````)
