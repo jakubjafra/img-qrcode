@@ -13,7 +13,7 @@ Template.QrCode.onRendered(function () {
     instance.$("div").qrcode({
         "render": 'canvas',
         "size": 50,
-        "text": instance.data.text
+        "text": data.text
     });
 
     var canvas = instance.$('div > canvas')[0];
