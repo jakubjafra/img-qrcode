@@ -4,13 +4,16 @@ function convertCanvasToImage(canvas) {
     return image;
 }
 
-Template.QrCode.onRendered(function(){
-    var instance = Template.instance();
-
+Template.QrCode.onRendered(function () {
+    var instance = Template.instance(),
+        // Get the current smart argument
+        view = Blaze.getView(),
+        data = Blaze.getData(view);
+        
     instance.$("div").qrcode({
         "render": 'canvas',
         "size": 50,
-        "text": instance.data.text
+        "text": data.text
     });
 
     var canvas = instance.$('div > canvas')[0];
@@ -19,7 +22,7 @@ Template.QrCode.onRendered(function(){
 
     instance.$("img").addClass("qr-code");
 
-    if(instance.data.size !== undefined) {
+    if (instance.data.size !== undefined) {
         instance.$("img").css({
             'width': instance.data.size,
             'height': instance.data.size

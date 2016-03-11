@@ -17,6 +17,19 @@ is generating code:
 ````
 The img is 256x256 px size.
 
+You can also add smart arguments on the text attribute like so:
+````
+{{> QrCode text=currentUserEmail }}
+````
+Where currentUserEmail is a data object returned by your helper or sent from the router:
+````
+Template.AdministrationPatientsList.helpers({
+    currentUserEmail: function(){
+        return 'example@gmail.com';
+    }
+});
+````
+
 Parameters
 ----------
 * ````text```` - text to be encoded
